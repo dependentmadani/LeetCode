@@ -4,16 +4,16 @@ class Solution:
             return s
         new_convert = ['' for i in range(numRows)]
         n = 0
-        direction = 'down'
+        direction = 1
         for i in s:
             new_convert[n] += i
             if (n == numRows - 1):
-                direction = 'up'
+                direction = 0
             elif (n == 0):
-                direction = 'down'
-            if direction == 'down':
+                direction = 1
+            if direction == 1:  #if direction is down
                 n += 1
-            elif direction == 'up':
+            elif direction == 0: #if direction is up
                 n -= 1
         return ''.join(new_convert)
         
