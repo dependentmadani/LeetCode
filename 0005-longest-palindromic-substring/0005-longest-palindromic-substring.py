@@ -9,13 +9,13 @@ class Solution:
         for i in range(len(s)):
             left , right = i, i
             new = ""
-            new, left, right,len_longPal = self.check_palindrom(s, left, right,len_longPal)
+            new, len_longPal = self.check_palindrom(s, left, right,len_longPal)
             if (new != ""):
                 LongPal = new
             
             left, right = i, i + 1
             new = ""
-            new, left, right,len_longPal = self.check_palindrom(s, left, right,len_longPal)
+            new, len_longPal = self.check_palindrom(s, left, right,len_longPal)
             if (new != ""):
                 LongPal = new
         
@@ -30,4 +30,4 @@ class Solution:
                     len_longPal = right - left + 1
                 left -= 1
                 right += 1
-        return LongPal, left, right, len_longPal
+        return LongPal, len_longPal
